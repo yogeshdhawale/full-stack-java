@@ -1,0 +1,78 @@
+
+full-stack Java developer with Spring Boot, React, and JHipster.
+
+SDKMAN 
+
+git clone https://github.com/oktadev/auth0-full-stack-java-example
+
+npm i -g generator-jhipster@7
+
+deps: java 11, nodejs 14, docker, jhipster, jhister-native, maven, cypress
+
+Install jhistper generator
+    npm ls -g generator-jhipster
+
+options:
+    jhipster -> asks for lot of options.
+    Question	Answer
+    Type of application?	Monolithic application
+    Name?	flickr2
+    Spring WebFlux?	No
+    Java package name?	com.auth0.flickr2
+    Type of authentication?	OAuth 2.0 / OIDC
+    Type of database?	SQL
+    Production database?	PostgreSQL
+    Development database?	H2 with disk-based persistence
+    Which cache?	Ehcache
+    Use Hibernate 2nd level cache?	Yes
+    Maven or Gradle?	Maven
+    Use the JHipster Registry?	No
+    Other technologies?	<blank>
+    Client framework?	React
+    Admin UI?	Yes
+    Bootswatch theme?	United > Dark
+    Enable i18n?	Yes
+    Native language of application?	English
+    Additional languages?	Your choice!
+    Additional testing frameworks?	Cypress
+    Install other generators?	No
+
+
+
+npm install --no-audit
+
+* docker in docker seems to be not required. 
+* Update docker from docker to docker-outside-of-docker and comment docker-in-docker.
+
+
+fixing devcontainer as per new syntax
+    This setting is deprecated, please use 'java.jdt.ls.java.home' instead.
+
+
+update jhistper using existing yo file
+    jhipster --with-entities
+
+
+
+docker-compose -f src/main/docker/keycloak.yml up -d
+
+check app
+    ./mvnw - start app with maven
+    
+    on separate terminal -
+        npm run e2e
+
+
+
+
+
+
+
+---other
+
+docker context ls
+NAME                TYPE                DESCRIPTION                               DOCKER ENDPOINT                             KUBERNETES ENDPOINT   ORCHESTRATOR
+default *           moby                Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                                   
+desktop-linux       moby                Docker Desktop                            npipe:////./pipe/dockerDesktopLinuxEngine                     
+docker context rm desktop-linux
+desktop-linux
