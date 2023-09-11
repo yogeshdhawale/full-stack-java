@@ -1,3 +1,4 @@
 {
-    "java.jdt.ls.java.home": "/docker-java-home"
+    "java.jdt.ls.java.home": "/docker-java-home",
+    "java.compile.nullAnalysis.mode": "automatic"
 }
